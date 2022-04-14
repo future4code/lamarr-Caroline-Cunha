@@ -27,8 +27,8 @@ let valorDia
 
 // Exercício 1
 
-let nome
-let idade
+// let nome
+// let idade
 
 console.log (typeof nome)
 console.log (typeof idade)
@@ -44,9 +44,9 @@ console.log ("Olá!", nome, "Você tem", idade, "anos", ".")
 
 // Exercício 2
 
-pergunta1 - Você gosta de chocolate? - Sim
-pergunta2 - Você canta no banheiro? - Sim
-pergunta3 - Branco traz paz? - Sim
+//  pergunta1 - Você gosta de chocolate? - Sim
+//  pergunta2 - Você canta no banheiro? - Sim
+//  pergunta3 - Branco traz paz? - Sim
 
 const pergunta1 = prompt ("Você gosta de chocolate?")
 const pergunta2 = prompt ("Você canta no banheiro?")
