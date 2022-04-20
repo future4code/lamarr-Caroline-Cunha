@@ -67,6 +67,6 @@ let array = [3,4,5,6,7,8,9,10,11,12,13]
 let listaDeTarefas = [];
 const tarefas = prompt("Informe três tarefas as serem realizadas no seu dia.")
 
-tarefa 0 = estudar
-tarefa 1 = dormir
-tarefa 2 = trabalhar
+// tarefa 0 = estudar
+// tarefa 1 = dormir
+// tarefa 2 = trabalhar
