@@ -2,14 +2,14 @@
 
 // EXERCÍCIO 0A
 function soma(num1, num2) {
-  // implemente sua lógica aqui
+  
   return num1 + num2
 }
 console.log (soma (1,5))
 
-// EXERCÍCIO 0B
+// // EXERCÍCIO 0B
 function imprimeMensagem() {
-  // implemente sua lógica aqui
+  
   const mensagem = prompt('Digite uma mensagem!')
 
   console.log(mensagem)
@@ -18,50 +18,87 @@ function imprimeMensagem() {
 // EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
 
 // EXERCÍCIO 01
-function calculaAreaRetangulo(altura, largura) {
-   
-    return altura * largura
-
-    console.log (calculaAreaRetangulo(4,5))
 
 
+function calculaAreaRetangulo(altura,largura) {
 
-}
+    return altura*largura
+ }
+
+
 
 // EXERCÍCIO 02
+
+
 function imprimeIdade(anoAtual, anoNascimento) {
-  // implemente sua lógica aqui
-anoAtual = Number(prompt("Qual o ano atual?"))
-anoNascimento = Number(prompt ("Qual seu ano de nascimento?"))
 
-console.log (imprimeIdade)
+let anoAtual = Number(prompt("Em que ano estamosl?"))
+const anoNascimento = Number(prompt ("Qual seu ano de nascimento?"))
 
+return anoAtual-anoNascimento
+console.log (imprimeIdade(2020,1990))
 }
+
+
+
 
 // EXERCÍCIO 03
 function calculaIMC(peso, altura) {
-  // implemente sua lógica aqui
+ 
+  console.log (calculaIMC)
+  return peso/ (altura*altura)
 
 }
+
+
+
 
 // EXERCÍCIO 04
+
+
 function imprimeInformacoesUsuario() {
-  // implemente sua lógica aqui
-  // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
+  
+  const NOME = Alice;
+  const IDADE = Number(28);
+  const EMAIL = alice@gmail.com;
+
+  const frase = (`Meu nome é ${NOME}, tenho ${IDADE} anos, e o meu email é ${EMAIL}`)
+
+  console.log (imprimeInformacoesUsuario(frase))
+  return frase
+ 
+   // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
 
 }
+
+
+
 
 // EXERCÍCIO 05
-function imprimeTresCoresFavoritas() {
-  // implemente sua lógica aqui
+function imprimeTresCoresFavoritas(coresFavoritas) {
 
+  const cor1 = prompt ("Digite sua cor favorita.")
+  const cor2 = prompt ("Digite mais uma cor sem repetir a anterior.")
+  const cor3 = promot ("Digite uma terceira cor favorita")
+
+  coresFavoritas = [cor1, cor2, cor3]
+
+  return coresFavoritas
 }
+
 
 // EXERCÍCIO 06
+
+
 function retornaStringEmMaiuscula(string) {
-  // implemente sua lógica aqui
+  
+  console.log(retornaStringEmMaiuscula)
+  return string.toUppercase()
 
 }
+
+
+
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
