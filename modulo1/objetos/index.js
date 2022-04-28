@@ -41,6 +41,7 @@
 
 //  EXERCÍCIOS DE ESCRITA DE CÓDIGO
 
+
 // Exercício 1
 
 // a)
@@ -87,7 +88,35 @@
 // console.log(`Eu sou ${pessoa1.nome}, mas pode me chamar de: ${pessoa1.apelidos[0]}, ${pessoa1.apelidos[1]} ou ${pessoa1.apelidos[2]}.`)
 
 
-// Exercício 2
+// Exercício 2 - com correção
+
+// const trab1 = {
+//     nome: "Rafael" ,
+//     idade: 30,
+//     profissão: "Professor"
+
+// }
+//  const trab2 = {
+//             nome: "João" ,
+//             idade: 38,
+//             profissão: "Advogado"
+        
+//         }
+
+// function imprimirDados (obj) {
+
+//     let dados = [obj.nome, obj.nome.length, obj.idade, obj.profissão, obj.profissão.length]
+    
+//     return dados
+    
+//     }
+    
+//     console.log (imprimirDados(trab1))
+//     console.log (imprimirDados(trab2))
+
+    
+
+// Exercício 2 - como havia sido realizado
 
 // const trab1 = {
 //     nome: "Rafael" ,
@@ -128,38 +157,37 @@
 // console.log(trab1,trab2)
 
 
-// Exercício 3
+// Exercício 3 - com correção
 
-    const carrinho = []
+    // const carrinho = []
 
-    const fruta = [
-          {nome: "tangerina",
-          disponibilidade: true},
-          {nome:"manga",
-          disponibilidade: false},
-          {nome: "uva",
-          disponibilidade: true}
-        ]
-                
-    function incluir (fruta) {
-
-        return carrinho.push(fruta)
-
-    }
-
-
-    // carrinho.push(fruta[0])
-    // carrinho.push(fruta[1])
-    // carrinho.push(fruta[2])
+    // const fruta1 =
+    //       {nome: "tangerina",
+    //       disponibilidade: true}
     
+    // const fruta2 = {nome:"manga",
+    //       disponibilidade: false}
+
+    // const fruta3 = {nome: "uva",
+    //       disponibilidade: true}
+      
+          
+    // function incluir (fruta) {
+
+    //     return carrinho.push(fruta)
+
+    // }
+
+    // incluir(fruta1)
+    // incluir(fruta2)
+    // incluir(fruta3)
     
-    console.log(carrinho)
+   
+    // console.log(carrinho)
 
 
 
     
-// console.log(carrinho)
-
 
 // const carrinho = []
 //    carrinho.push(fruta[0])

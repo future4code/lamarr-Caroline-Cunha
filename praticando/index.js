@@ -54,25 +54,25 @@
 // console.log(instrutora.email)
 
 
-const paiDePet = {
+// const paiDePet = {
 
-    nome:"Caio Teixeira",
-    pet: {
+//     nome:"Caio Teixeira",
+//     pet: {
 
-        nome: "Malu",
-        raca: "salsicha",
-        idade: 16
+//         nome: "Malu",
+//         raca: "salsicha",
+//         idade: 16
 
-    }
+//     }
 
-}
+// }
 
-const pet = paiDePet.pet
-console.log(pet)
-console.log(paiDePet.pet.nome)
+// const pet = paiDePet.pet
+// console.log(pet)
+// console.log(paiDePet.pet.nome)
 
-const nomeDoPet = pet.nome
-console.log(nomeDoPet)
+// const nomeDoPet = pet.nome
+// console.log(nomeDoPet)
 
 
 // Exercício 1
@@ -109,3 +109,21 @@ console.log(nomeDoPet)
 // }
 
 // console.log(`O nome da pessoa é ${pessoa.nome}, ela tem ${pessoa.idade} anos e gosta muito de ${pessoa.generoMuscialPreferido}.`)
+
+function somarNumeros (n1, n2) {
+
+    const resultado = n1 + n2
+    return resultado
+          
+    }
+
+const res1 = somarNumeros (2,3)
+const res2 = somarNumeros (4,2)
+const res3 = somarNumeros (9,1)
+
+
+
+    console.log (res1)
+    console.log (res2)
+    console.log (res3)
+
