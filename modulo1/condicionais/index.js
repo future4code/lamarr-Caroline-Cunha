@@ -100,7 +100,7 @@
 let genero = prompt("Qual o gênero deste filme?")
 let valor = Number(prompt("Qual o valor do ingresso?"))
 
-    if (genero ==="fanstasia" && valor<15) {
+    if (genero ==="fantasia" && valor<15) {
       
        console.log("Bom filme!")
     }
