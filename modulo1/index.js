@@ -1,87 +1,72 @@
-// Interpretação de código
+// Exercícios de Interpretação de código
 
-// Exercício 1
-/*
-const bool1 = true;
-const bool2 =false;
-const bool3 = !bool2;
-
-let resultado = bool1 && bool2;
-console.log("a. ", resultado);
-resposta - a. false
-
-resultado = bool1 && bool2 && bool3);
-console.log("b.", resultado);
-resposta - b. false
-
-resultado = !resultado && (bool1 || bool2);
-console.log("c.", resultado);
-resposta - c. true
-
-console.log("d.", typeof resultado);
-resposta - d. 
-*/
-
-// Exercício 2
-/*
-let primeiroNumero = prompt ("Digite um numero!");
-let segundoNumero = prompt ("Digite outro numero!");
-
-const soma = primeiroNumero + segundoNumero;
-
-console.log(soma)
-
-resposta - o prompt pergunta ao usuário algo, e os números deverão variar
-de acordo com a pessoa que responder. Desta forma, a variável não deveria
-ser const, e sim let
-a soma que deverá aparecer não será constante.
-*/
-
-// Exercício 3
-
-/* resposta - deverá trocar a declaração de const para let.*/
-
-
-
-// Exercícios de escrita de código
-
+// teste console.log
+let soma = 1 + 4
+ console.log (soma)
 
 // Exercício 1
 
-let idadePessoa = prompt ("Qual é a sua idade?");
-let idadeAmiga = prompt ("Amiga, qual a sua idade?");
+let array = [3,4,5,6,7,8,9,10,11,12,13]
+// a. undefined
+// b. ?
+// c. 11 itens
+// d. 3
+// e. array[4] = 19 --> [3,4,5,6,19,8,9,10,11,12,13]
+// f. 9
 
-console.log("Sua idade de", idadePessoa, "anos é >= que", idadeAmiga)
+// Exercício 2
+//
+// let frase = prompt("Digite uma frase")
+
+// console.log(frase.toUpperCase().replaceAll("A", "I"), frase.length)
+
+// É preciso salgar os pés para adoçar a alma.
+// É PRECISO SILGIR OS PÉS PIRI IDOÇIR I ILMI. 43
+
+// SUBI NUM ÔNIBUS EM MIRROCOS. 28
+
+
+
+// EXERCÍCIOS DE ESCRITA DE CÓDIGO
+
+// Exercício 1
+
+// const nomeUsuario = prompt("Digite seu nome.")
+// const emailUsuario = prompt("Digite seu email.")
+// console.log("O e-mail" , emailUsuario , "foi cadastrado com sucesso. Seja bem-vinda (o),", nomeUsuario , "!")
+
 
 // Exercício 2
 
-/*let numeroPar = prompt ("Indique um número par!");
-let restoDivisao = (nuemeroPar / 2)
-*/
+// const comidasFavoritas = ["churrasco", "umbú", "tomate", "sushi", "quindim"]
+
+// console.log(`Essas são minhas comidas preferidas:.`)
+// console.log(comidasFavoritas[0]);
+// console.log(comidasFavoritas[1]);
+// console.log(comidasFavoritas[2]);
+// console.log(comidasFavoritas[3]);
+// console.log(comidasFavoritas[4]);
+
+
+// const comidaUsuario = prompt("Diga sua comida favorita.")
+
+// console.log(comidaUsuario);
+
+// comidasFavoritas[1] = comidaUsuario
+
+// console.log(`Essas são minhas comidas preferidas:.`)
+// console.log(comidasFavoritas[0]);
+// console.log(comidaUsuario);
+// console.log(comidasFavoritas[2]);
+// console.log(comidasFavoritas[3]);
+// console.log(comidasFavoritas[4]);
 
 
 // Exercício 3
 
-let idade = prompt ("Qual a sua idade?");
-let idadeMes = idade * 12
-let idadeDias = idadeMes * 30
-let idadeHoras = idadeDias * 24
+let listaDeTarefas = [];
+const tarefas = prompt("Informe três tarefas as serem realizadas no seu dia.")
 
-console.log("Tenho", idade, "anos");
-console.log("Esta idade em meses significa", idadeMes, "meses");
-console.log("Já em dias esta idade correspoderia a", idadeDias, "dias");
-console.log("Por fim, em horas esta idade correspoderia a", i52dadeHoras, "horas");
-
-
-// Exercício 4
-
-let valor1 = prompt ("Informe um número maior ou igual a 6.");
-let valor2 = prompt ("Informe um número diferente do primeiro");
-
-let resultado = (valor1 >= valor2);
-let resultado1 = (valor1 === valor2);
-// let resultado2 = (valor1 ) - buscar!! não sei fazer
-// let resultado3 = buscar !! não sei fazer
-
-console.log("O primeiro número é maior que o segundo?", resultado)
-console.log("O primeiro número é igual ao segundo?", resultado)
+// tarefa 0 = estudar
+// tarefa 1 = dormir
+// tarefa 2 = trabalhar
