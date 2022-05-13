@@ -1,0 +1,14 @@
+Resovler os problemas por meio de códigos de programação exige atenção e cuidado.
+Para tal, existe um conjunto de passos a serem dados para facilitar a atividade. 
+Estes passos não são estanques, podendo variar, sendo adaptáveis em cada caso. Entrentanto,
+em geral, as seguintes etapas devem ser seguidas:
+1 - Atenção no enunciado: ler com cuidado para compreensão do que está sendo pedido;
+2 - Pescar e retirar as informações relevantes que serão necessárias na construção do seu código;
+3 - Avaliar quais são as informações existentes que podem funcionar como entradas, bem como o que
+    se espera que resultado, ou as saídas;
+4 - Antes de iniciar o código sugere-se a elaboração de um esquema visual para organizar as ideias e dados;
+5 - Criar um código feio, ou seja, o primeiro código, que seja funcional e resolva o problema,
+    independente de seu tamanho e estrutura;
+6 - Testar o material produzido e transcrever para a linguagem de programação desejada;
+7 - Lapidar o material produzido, ao refatorar o que foi elaborado, dando bons nomes para variáveis e funções,
+    separando as funções e reorganizando o código.
