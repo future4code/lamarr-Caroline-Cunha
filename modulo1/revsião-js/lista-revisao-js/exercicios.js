@@ -7,20 +7,23 @@
 
 // const array = [3,2,1,4,7]
 
-// function retornaTamanhoArray(array) {
+function retornaTamanhoArray(array) {
    
-//     return array.length
-// }
+    return array.length
+}
 
 // console.log(retornaTamanhoArray(array))
 
+
+
+
 // EXERCÍCIO 02
 
-// function retornaArrayInvertido(array) {
+function retornaArrayInvertido(array) {
   
-// return array.reverse()
+return array.reverse()
 
-// }
+}
 // console.log(retornaArrayInvertido(array))
 
 // Desafio do Exercício 2
@@ -45,23 +48,42 @@
 // console.log (arrayInvertido(array))
 
 
+
+
+
 // EXERCÍCIO 03
 
 // const array1 = [36,12,56,7,3]
 
-// function retornaArrayOrdenado(array) {
+function retornaArrayOrdenado(array) {
   
-//      array.sort(function(a,b) {
-//          return a-b
-//      })
+     array.sort(function(a,b) {
+         return a-b
+     })
 
-//      return array
-// }
+     return array
+}
 
-// console.log (retornaArrayOrdenado(array))
+console.log (retornaArrayOrdenado(array))
+
+
+
 
 
 // EXERCÍCIO 04
+
+
+function retornaNumerosPares (array) {
+    function pares (array) {
+     return array % 2 === 0
+ }             
+ 
+ let soNumerosPares = array.filter (pares)
+ 
+ return soNumerosPares
+ 
+ } 
+  
 
 // let array2 = [1,2,3,4,5,6,7,8]
 
@@ -75,49 +97,59 @@
 // console.log ((numerosPares))
 
 // 
-function retornaNumerosPares (array) {
-   function pares (array) {
-    return array % 2 === 0
-}             
+ 
 
-let soNumerosPares = array.filter (pares)
-
-return soNumerosPares
-
-} 
-  
 
 // EXERCÍCIO 05
 
 
-function retornaNumerosParesElevadosADois(array) {
-     
-    for (let numero of array) {
-        if (numero % 2 ===0){
-           
-        let novoArray = []
-        novoArray.push(numero^2)  
-                           
+   function retornaNumerosParesElevadosADois (array) {
+    
+    let novaArray = []
+    const soPares = array.filter((array) => {
+        if (array % 2 ===0){
+            for (let num of soPares) {
+                let quadrado = num*num
+                novaArray.push(quadrado)
+            }
+            return novaArray
         }
+    })
+    
+}
 
-    return novoArray
-        }
-    }
-   retornaNumerosPares()
+retornaNumerosParesElevadosADois()
+
+    
+    //     for (let numero of array) {
+    //         if (numero % 2 ===0){
+               
+    //         let novoArray = []
+    //         novoArray.push(numero^2)  
+                               
+    //         }
+    
+    //     return novoArray
+    //         }
+    //     }
+    //    retornaNumerosPares()
+    
+
+
     
 // EXERCÍCIO 06
 
-// let arrayDado = [1,2,3,4,5,6,7]
-// function retornaMaiorNumero(array) {
-//     let maiorNumero = 0
-//     for (let posicao = 0; posicao<array.length; posicao++){
-//         let numeroDoArray=array[posicao]
-//         if(numeroDoArray>maiorNumero) {
-//             maiorNumero=array[posicao]
-//         }
-//     }
-//     return maiorNumero
-// }
+let arrayDado = [1,2,3,4,5,6,7]
+function retornaMaiorNumero(array) {
+    let maiorNumero = 0
+    for (let posicao = 0; posicao<array.length; posicao++){
+        let numeroDoArray=array[posicao]
+        if(numeroDoArray>maiorNumero) {
+            maiorNumero=array[posicao]
+        }
+    }
+    return maiorNumero
+}
 
 // function retornaMaiorNumero(array) {
 // let maiorNumero = 0
@@ -132,17 +164,37 @@ function retornaNumerosParesElevadosADois(array) {
 
 // console.log(retornaMaiorNumero(arrayDado))
 
+
+
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+    
+        const objeto = {
+            maiorNumero: Math.max(num1,num2),
+            maiorDivisivelPorMenor: Math.max (num1,num2) % Math.min (num1,num2) === 0,
+            diferenca: Math.max (num1,num2) - Math.min (num1,num2),
+        }
+           return objeto
+       }
     
 
-}
 
 // EXERCÍCIO 08
-function retornaNPrimeirosPares(n) {
 
-}
+function retornaNPrimeirosPares(n) {
+    
+        const numPar = []
+        
+        for (let i=0; numPar.length < n; i++) {
+        
+            if (i % 2 === 0) {
+                numPar.push(i)
+        }
+        }     
+        return numPar
+    }
+    
+
 
 // EXERCÍCIO 09
 
@@ -163,15 +215,33 @@ if (ladoA === ladoB && ladoB === ladoC){
 
 }
 
-// EXERCÍCIO 10
-function retornaSegundoMaiorESegundoMenor(array) {
-  
-    
 
-}
+
+// EXERCÍCIO 10
+
+function retornaSegundoMaiorESegundoMenor(array) {
+      
+        let lista = array.sort(function(a,b) {
+             return a-b})  
+            let segundoMaiorESegundoMenor = []
+            segundoMaiorESegundoMenor.push([lista[lista.length-2], lista[1]])
+            return (segundoMaiorESegundoMenor)
+        }
+     
+
+
+
 // EXERCÍCIO 11
 
-
+function retornaChamadaDeFilme(filme) {
+    const listaFilme = {
+        nome: "O Diabo Veste Prada",
+        ano: 2006,
+        diretor: "David Frankel",
+        atores: ["Meryl Streep"," Anne Hathaway"," Emily Blunt"," Stanley Tucci"]
+    }
+ return `Venha assistir ao filme ${listaFilme.nome}, de ${listaFilme.ano}, dirigido por ${listaFilme.diretor} e estrelado por ${listaFilme.atores}.`
+}
 
 // function retornaChamadaDeFilme(filme) {
 //     const listaFilme = {
@@ -185,30 +255,50 @@ function retornaSegundoMaiorESegundoMenor(array) {
 // retornaChamadaDeFilme()
 
 
+
+
+
 // EXERCÍCIO 12
 
 function retornaPessoaAnonimizada(pessoa) {
-    const lista = {
-        nome: "Astrodev",
-        idade: 25,
-        email: "astrodev@labenu.com.br",
-        endereco: "Rua do Futuro, 4",
-    }
 
-const novaLista = {...lista,
-    nome: "ANÔNIMO",
-    idade: 25,
-    email: "astrodev@labenu.com.br",
-    endereco: "Rua do Futuro, 4",
-}
-return novaLista
+    const listaPessoa = {
+        nome: " ",
+        idade: " ",
+        email: "",
+        endereco: ""
+    }
+    const listaPessoa1 = {...listaPessoa,
+        nome: "ANÔNIMO"
+        
+    }
 }
 
 retornaPessoaAnonimizada()
+
+
+
 // EXERCÍCIO 13A
+
 function retornaPessoasAutorizadas(pessoas) {
-   
-}
+    
+    const lista = [
+        { nome: "Paula", idade: 12, altura: 1.8},
+        { nome: "João", idade: 20, altura: 1.3},
+        { nome: "Pedro", idade: 15, altura: 1.9},
+        { nome: "Luciano", idade: 22, altura: 1.8},
+        { nome: "Artur", idade: 10, altura: 1.2},
+        { nome: "Soter", idade: 70, altura: 1.9}
+    ]
+            for (let lista of pessoas) {
+                if (lista.altura >= 1.5 && lista.idade > 14 && lista.idade && lista.idade < 60) {
+                    const visitAutorizados = lista.push((lista) =>{
+                    return visitAutorizados
+            })
+        }
+    }
+    }  
+
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
@@ -220,15 +310,26 @@ function retornaContasComSaldoAtualizado(contas) {
 
 }
 
+
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    
+        let ordemAlfabeticaPacientes = consultas.sort ((a,b) => a - b)
+      
+        return ordemAlfabeticaPacientes
 }
 
+
 // EXERCÍCIO 15B
+
 function retornaArrayOrdenadoPorData(consultas) {
    
+   let datasConsultaPacientes = consultas.sort((a,b) => a - b)
+
+return datasConsultaPacientes
+
 }
+
 
 
 // Exercício 1
