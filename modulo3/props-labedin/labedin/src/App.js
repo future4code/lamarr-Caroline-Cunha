@@ -4,6 +4,7 @@ import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import CardPequeno from './components/CardPequeno/CardPequeno.js';
 import foto from './img/fotoCarol.png';
+import email from './img/email.png'
 
 
 function App() {
@@ -45,21 +46,21 @@ function App() {
       </div>
 
 
-      <div className="page-section-container-contatos">
+      <div className="page-section-container">
         <h2>Contatos</h2>
         <CardPequeno 
-          imagem="https://cdn.icon-icons.com/icons2/535/PNG/512/Email-Icon_icon-icons.com_52870.png" 
+          imagem={email}
           descricao="E-mail: carolinemcs@hotmail.com" 
         />
         
         <CardPequeno
           imagem="https://sedurb.es.gov.br/Media/Sedurb/Fotos/10-single-default.jpg" 
-          descricao="Endereço: Rua das Areias do Deserto, s/n, Tatooine"
+          descricao="Endereço: Ruas das Areais do Deserto, s/n, Tatooine"
         />
 
        </div>
 
-      <div className="page-section-container1">
+      <div className="page-section-container">
         <h2>Minhas redes sociais</h2>
         <ImagemButton 
           imagem ="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png" 
