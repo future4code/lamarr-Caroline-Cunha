@@ -1,0 +1,1 @@
+link do surge: worthless-gate.surge.sh
