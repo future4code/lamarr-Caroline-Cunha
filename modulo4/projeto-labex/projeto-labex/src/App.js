@@ -12,8 +12,7 @@ function App() {
     <div className="App">
       
       <Rotas/>
-      <ListTripsPage/>
-      
+          
     </div>
   );
 }

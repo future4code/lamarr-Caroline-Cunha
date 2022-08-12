@@ -14,11 +14,7 @@ const HomePage = () => {
         navigate("/adm/trips/list")
     }
 
-    const goToLogin = () => {
-        navigate("/login")
-    }
-
-           
+              
 
     return (
         <>

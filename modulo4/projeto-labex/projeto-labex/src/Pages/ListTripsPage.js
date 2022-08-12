@@ -7,13 +7,13 @@ import useRequestData from '../Hooks/UseRequestData';
 
 const ListTripsPage = () => {
 
-    const [dataListTrip, isLoading, erro] = useRequestData(`${BASE_URL}trips`)
-  
+    const [dataListTrip] = useRequestData(`${BASE_URL}trips`)
+    // isLoading, erro
     const listTrip = dataListTrip&&dataListTrip.trips.map ((trip)=>{
     return<p>{trip.name}</p>
     }) 
 
-
+      
     const navigate=useNavigate();
     const goToFormApplicPage = () => {
         navigate("/trips/application")
@@ -24,11 +24,14 @@ const ListTripsPage = () => {
 
     
     return (
+
         <div>
             <h1>Lista de Viagens</h1>
-            {isLoading&&"....Carregando!"}
-            <ul>{!isLoading&&!dataListTrip&&listTrip}</ul>
-            {!isLoading&&!dataListTrip&&erro}
+         
+            {/* {isLoading&&"....Carregando!"} */}
+            {/* <ul>{!isLoading&&!dataListTrip&&listTrip}</ul> */}
+            {/* {!isLoading&&!dataListTrip&&erro} */}
+            {listTrip}
             <button onClick={goToBack}>Voltar</button>
             <button onClick={goToFormApplicPage}>Inscrever-se</button>
         </div>
