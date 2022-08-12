@@ -10,35 +10,22 @@ const HomePage = () => {
         navigate("/trips/list")
     }
 
-    const goToFormApplicPage = () => {
-        navigate("/trips/application")
+    const goToAdimHomePage = () => {
+        navigate("/adm/trips/list")
     }
 
     const goToLogin = () => {
         navigate("/login")
     }
 
-    const goToAdimHomePage = () => {
-        navigate("/adm/trips/list")
-    }
-
-    const goToAdimCreate = () => {
-        navigate("/adm/trips/create")
-    }
-    const goToAdimDetails = () => {
-        navigate("/adm/trips/:id")
-    }
-
+           
 
     return (
         <>
-            <h1>Página Inicial</h1>
+            <h1>LabeX</h1>
             <button onClick={goToListPage}>Lista de Viagens</button>
-            <button onClick={goToFormApplicPage}>Formulário</button>
-            <button onClick={goToLogin}>Login</button>
             <button onClick={goToAdimHomePage}>Administrador</button>
-            <button onClick={goToAdimCreate}>Criar Novas</button>
-            <button onClick={goToAdimDetails}>Detalhes</button>
+                       
         </>
     )
 }
