@@ -1,7 +1,8 @@
 
 import './App.css';
 import Rotas from './Components/Rotas';
-import ListTripsPage from './Pages/ListTripsPage';
+
+import LoginPage from './Pages/LoginPage';
 
 
 
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       
       <Rotas/>
+      
           
     </div>
   );
