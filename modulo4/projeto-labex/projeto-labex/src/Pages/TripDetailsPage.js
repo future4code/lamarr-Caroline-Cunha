@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import useProtectedPage from '../Hooks/useProtectedPage';
 
 
 const TripDetailsPage = () => {
+
+    useProtectedPage ()
+
+    useEffect (() => {
+
+        const token = localStorage.getItem("token");
+
+        axios.get(
+            `https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/trip/:id`,
+            {
+                headers: {
+                    auth: token
+                }
+            }).then((response)=>{
+                console.log(response.data)
+            }).catch((error)=>{
+                console.log("Deu erro: ", error.response)
+            })
+    }, [])
+
 
     const navigate=useNavigate();
     

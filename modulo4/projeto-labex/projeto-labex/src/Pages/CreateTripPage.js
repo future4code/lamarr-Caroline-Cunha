@@ -1,11 +1,14 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import useProtectedPage from '../Hooks/useProtectedPage';
 
 
 
 const CreateTripPage = () => {
 
+    useProtectedPage ()  
+   
     const navigate=useNavigate();
 
     const goToBack = () => {

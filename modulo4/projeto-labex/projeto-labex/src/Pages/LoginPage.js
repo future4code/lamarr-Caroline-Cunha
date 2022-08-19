@@ -1,62 +1,68 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import useForm from '../hooks/useForm';
+import useForm from '../Hooks/useForm';
+import { clear } from '@testing-library/user-event/dist/clear';
+import {BASE_URL} from '../constants/constants';
+
 
 
 
 function LoginPage() {
-
+    
+    const [form, onChange, clear] = useForm({email: "", password: "" })
+    
     const navigate = useNavigate();
 
     const goToBack = () => {
         navigate(-1);
     };
-    const [form, onChange] = useForm({ email: "", senha: "" });
-
-    // const body = {
-    //     "email": email,
-    //     "password": password
-    // }
+    
+     
     const fazerLogin = (event) => {
         event.preventDefault();
-    };
+       
+        axios.post(`${BASE_URL}login`, form)
+        .then((response) => {
+            localStorage.setItem("token", response.data.token)
+            navigate("/adm/trips/list")
+        })
+        .catch((error) => console.log(error.message))
 
-    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/carol-marques-lamar/login, form")
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error.message));
+        clear();
 
-    console.log(form);
+    }
 
-
-    return (
+     return (
         <div>
             <h1>Login</h1>
             <form onSubmit={fazerLogin}>
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">E-mail:</label>
                 <input
                     name="email"
                     id="email"
-                    placeholder="email"
+                    placeholder="E-mail"
                     value={form.email}
                     onChange={onChange}
                     type="email"
-                    required />
+                    required 
+                />
+
                 <label htmlFor="senha">Senha:</label>
                 <input
-                    name="senha"
+                    name="password"
                     id="senha"
-                    placeholder="senha"
+                    placeholder="Senha"
                     value={form.senha}
                     onChange={onChange}
                     type="password"
                     pattern="^.{3,}$"
                     title="mínimo de 3 caracteres"
-                    required />
-                <button type="submit">Login</button>
-                <button onClick={goToBack}>Voltar</button>
-                <button>Entrar</button>
+                    required 
+                />
+                <button type="submit">Enviar</button>             
             </form>
+            <button onClick={goToBack}>Voltar</button>
         </div>
     );
 }

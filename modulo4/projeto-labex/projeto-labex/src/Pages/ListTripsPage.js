@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../constants/constants';
-import useRequestData from '../hooks/UseRequestData';
+import useRequestData from '../Hooks/UseRequestData';
 
 
 

@@ -1,9 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import useProtectedPage from '../Hooks/useProtectedPage';
+
 
 
 
 const AdimHomePage = () => {
+    
+    useProtectedPage ()
     
     const navigate=useNavigate();
 
@@ -11,10 +15,7 @@ const AdimHomePage = () => {
         navigate("/adm/trips/create")
     }
 
-    const goToLogin = () => {
-        navigate("/login")
-    }
-
+    
     const goToAdimDetails = () => {
         navigate("/adm/trips/:id")
     }
@@ -23,13 +24,16 @@ const AdimHomePage = () => {
         navigate(-1)
     }
 
+    const goToAdimHomePage = () => {
+        navigate("/adm/trips/list")
+    }
+
 
     return (
         <>
             <p>Painel do Administrador</p>
             <button onClick={goToBack}>Voltar</button>
             <button onClick={goToAdimCreate}>Criar Novas</button>
-            <button onClick={goToLogin}>Login</button>
             <button onClick={goToAdimDetails}>Detalhes</button>
          
         </>
