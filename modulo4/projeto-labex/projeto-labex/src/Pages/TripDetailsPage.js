@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import useProtectedPage from '../Hooks/useProtectedPage';
 
@@ -27,6 +27,8 @@ const TripDetailsPage = () => {
 
 
     const navigate=useNavigate();
+
+    // const pathParams = useParams();
     
     const goToBack = () => {
         navigate(-1)
@@ -35,6 +37,7 @@ const TripDetailsPage = () => {
     return (
         <>
             <p>Detalhes de viagem</p>
+            {/* <p>Detalhes de viagem {pathParams.id}</p> */}
             <button onClick={goToBack}>Voltar</button>
             <button>Aprovar</button>
             <button>Desaprovar</button>

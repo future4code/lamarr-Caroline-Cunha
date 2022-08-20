@@ -8,7 +8,7 @@ import {BASE_URL} from '../constants/constants';
 
 
 
-function LoginPage() {
+const LoginPage = () => {
     
     const [form, onChange, clear] = useForm({email: "", password: "" })
     
@@ -64,7 +64,7 @@ function LoginPage() {
             </form>
             <button onClick={goToBack}>Voltar</button>
         </div>
-    );
-}
+    )};
 
-export default LoginPage;
+
+export default LoginPage
