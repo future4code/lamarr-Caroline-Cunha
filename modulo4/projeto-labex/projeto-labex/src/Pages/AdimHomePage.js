@@ -16,12 +16,12 @@ const AdimHomePage = () => {
         navigate("/adm/trips/create")
     }
 
-    const goToAdimDetails = (id) => {
-        navigate("/adm/trips/:id")
-    } 
     // const goToAdimDetails = (id) => {
-    //     navigate(`/adm/trips/${id}`)
-    // }
+    //     navigate("/adm/trips/:id")
+    // } 
+    const goToAdimDetails = (id) => {
+        navigate(`/adm/trips/${id}`)
+    }
 
     const goToBack = () => {
         navigate(-1)
@@ -37,8 +37,8 @@ const AdimHomePage = () => {
             <p>Painel do Administrador</p>
             <button onClick={goToBack}>Voltar</button>
             <button onClick={goToAdimCreate}>Criar Novas</button>
-            <button onClick={goToAdimDetails}>Detalhes</button>
-            {/* <button onClick={()=>{goToAdimDetails("id")}}>Detalhes</button> */}
+            {/* <button onClick={goToAdimDetails}>Detalhes</button> */}
+            <button onClick={()=>{goToAdimDetails("id")}}>Detalhes</button>
          
         </>
     )
