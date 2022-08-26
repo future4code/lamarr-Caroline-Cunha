@@ -9,3 +9,5 @@ link do surge: lying-wine.surge.sh
 5° link do surge: unaccountable-surprise.surge.sh
 
 6° link do surge: unable-ant.surge.sh
+
+7° link do surge: fuzzy-garden.surge.sh
