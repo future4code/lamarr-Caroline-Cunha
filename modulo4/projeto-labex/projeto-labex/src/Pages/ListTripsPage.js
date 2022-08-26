@@ -2,38 +2,32 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../constants/constants';
 import useRequestData from '../Hooks/UseRequestData';
+import { goToFormApplicPage, goToBack} from '../constants/coordinator';
 
 
 
 const ListTripsPage = () => {
 
-    const [dataListTrip] = useRequestData(`${BASE_URL}trips`)
-    // isLoading, erro
+    const [dataListTrip, isLoadingUser, errorUser] = useRequestData(`${BASE_URL}trips`)
+   
     const listTrip = dataListTrip&&dataListTrip.trips.map ((trip)=>{
-    return<p>{trip.name}</p>
-    }) 
+    return<li key={trip.id}>{trip.name}<button onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</button></li>
+    })
 
       
     const navigate=useNavigate();
-    const goToFormApplicPage = () => {
-        navigate("/trips/application")
-    }
-    const goToBack = () => {
-        navigate(-1)
-    }
-
     
+        
     return (
 
         <div>
             <h1>Lista de Viagens</h1>
-         
-            {/* {isLoading&&"....Carregando!"} */}
-            {/* <ul>{!isLoading&&!dataListTrip&&listTrip}</ul> */}
-            {/* {!isLoading&&!dataListTrip&&erro} */}
-            {listTrip}
-            <button onClick={goToBack}>Voltar</button>
-            <button onClick={goToFormApplicPage}>Inscrever-se</button>
+                    
+            {isLoadingUser&&"....Carregando!"}
+            <>
+            <ul>{!isLoadingUser&&!dataListTrip&&listTrip}</ul>
+            </>
+            {!isLoadingUser&&!dataListTrip&&errorUser}
         </div>
     )
 }

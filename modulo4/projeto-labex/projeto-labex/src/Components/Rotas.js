@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import AdimHomePage from '../Pages/AdimHomePage';
+import {AdimHomePage} from '../Pages/AdimHomePage';
 import ApplicationFormPage from '../Pages/ApplicationFormPage';
 import CreateTripPage from '../Pages/CreateTripPage';
 import HomePage from '../Pages/HomePage';
@@ -17,9 +17,9 @@ const Rotas = () => {
                 <Route path="/trips/list" element={<ListTripsPage/>}/>
                 <Route path="/trips/application" element={<ApplicationFormPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
-                <Route path="/adm/trips/list" element={<AdimHomePage/>}/>
-                <Route path="/adm/trips/create" element={<CreateTripPage/>}/>                
-                <Route path="/adm/trips/:id" element={<TripDetailsPage/>}/>
+                <Route path="/admin/trips/list" element={<AdimHomePage/>}/>
+                <Route path="/admin/trips/create" element={<CreateTripPage/>}/>                
+                <Route path="/admin/trips/:id" element={<TripDetailsPage/>}/>
             </Routes>     
         </BrowserRouter>
     )

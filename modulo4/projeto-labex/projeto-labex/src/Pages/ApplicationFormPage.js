@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { goToBack } from '../constants/coordinator';
 
 
 
@@ -7,9 +8,9 @@ const ApplicationFormPage = () => {
 
     const navigate=useNavigate();
 
-    const goToBack = () => {
-        navigate(-1)
-    }
+    // const goToBack = () => {
+    //     navigate(-1)
+    // }
 
     const[inputName, setInputName] = useState()
     const[inputAge, setInputAge] = useState()
@@ -48,7 +49,7 @@ const ApplicationFormPage = () => {
                 <input placeholder="País" value={inputCountry} onChange={(event)=>{setInputCountry(event.target.value)}} required></input>
                 <button onClick={onSubmit}>Enviar</button>
             </form>
-            <button onClick={goToBack}>Voltar</button>
+            <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
             
         </>
     )

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import useProtectedPage from '../Hooks/useProtectedPage';
 import useForm from '../Hooks/useForm';
 import { BASE_URL } from '../constants/constants';
+import { goToBack } from '../constants/coordinator';
 
 
 
@@ -38,9 +39,9 @@ const CreateTripPage = () => {
             .catch((error)=>console.log(error))
     }
     
-    const goToBack = () => {
-        navigate(-1)
-    }
+    // const goToBack = () => {
+    //     navigate(-1)
+    // }
 
  
     return (
@@ -61,7 +62,7 @@ const CreateTripPage = () => {
                 
                 <button>Cadastrar viagem</button>
             </form>
-            <button onClick={goToBack}>Voltar</button>
+            <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
         </>
     )
 }

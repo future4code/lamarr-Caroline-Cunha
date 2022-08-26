@@ -4,6 +4,7 @@ import axios from 'axios';
 import useForm from '../Hooks/useForm';
 import { clear } from '@testing-library/user-event/dist/clear';
 import {BASE_URL} from '../constants/constants';
+import { goToBack } from '../constants/coordinator';
 
 
 
@@ -14,18 +15,14 @@ const LoginPage = () => {
     
     const navigate = useNavigate();
 
-    const goToBack = () => {
-        navigate(-1);
-    };
-    
-     
+         
     const fazerLogin = (event) => {
         event.preventDefault();
        
         axios.post(`${BASE_URL}login`, form)
         .then((response) => {
             localStorage.setItem("token", response.data.token)
-            navigate("/adm/trips/list")
+            navigate("/admin/trips/list")
         })
         .catch((error) => console.log(error.message))
 
@@ -62,9 +59,9 @@ const LoginPage = () => {
                 />
                 <button type="submit">Enviar</button>             
             </form>
-            <button onClick={goToBack}>Voltar</button>
+            <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
         </div>
     )};
 
 
-export default LoginPage
+export default LoginPage;
