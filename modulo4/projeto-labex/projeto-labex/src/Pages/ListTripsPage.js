@@ -11,7 +11,12 @@ const ListTripsPage = () => {
     const [dataListTrip, isLoadingUser, errorUser] = useRequestData(`${BASE_URL}trips`)
    
     const listTrip = dataListTrip&&dataListTrip.trips.map ((trip)=>{
-    return<li key={trip.id}>{trip.name}<button onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</button></li>
+    return(
+    <p key={trip.id}>
+        {trip.name}
+        <button onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</button>
+    </p>
+    )
     })
 
       
@@ -22,12 +27,14 @@ const ListTripsPage = () => {
 
         <div>
             <h1>Lista de Viagens</h1>
+            {listTrip}
                     
-            {isLoadingUser&&"....Carregando!"}
+            {/* {isLoadingUser&&"....Carregando!"}
             <>
             <ul>{!isLoadingUser&&!dataListTrip&&listTrip}</ul>
             </>
-            {!isLoadingUser&&!dataListTrip&&errorUser}
+            {!isLoadingUser&&!dataListTrip&&errorUser} */}
+            <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
         </div>
     )
 }

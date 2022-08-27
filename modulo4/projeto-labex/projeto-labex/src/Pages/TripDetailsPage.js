@@ -3,15 +3,20 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import useProtectedPage from '../Hooks/useProtectedPage';
 import { goToBack } from '../constants/coordinator';
+import { BASE_URL } from '../constants/constants';
 
 
 
 const TripDetailsPage = () => {
 
     useProtectedPage ()
+    const navigate=useNavigate();
+
+    // const pathParams = useParams();
 
     const  { id } = useParams ()
-    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/trip/NoIFVcOiSgTKTIPVZwXS`
+    // const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/trip/NoIFVcOiSgTKTIPVZwXS`
+    
     const [tripDetail, setTripDetail] = useState (null)
 
     let content = null
@@ -20,7 +25,7 @@ const TripDetailsPage = () => {
 
         const token = localStorage.getItem("token");
 
-        axios.get(url,
+        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/trip/${id}`,
             {
                 headers: {
                     auth: token
@@ -33,17 +38,10 @@ const TripDetailsPage = () => {
             })
     }, []);
 
-    const navigate=useNavigate();
-
-    const pathParams = useParams();
     
-    // const goToBack = () => {
-    //     navigate(-1)
-    // }
-   
+      
     return (
         <>
-            {/* <p>Detalhes de viagem</p> */}
             <p>Detalhes de viagem</p>
             <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
             <button>Aprovar</button>
