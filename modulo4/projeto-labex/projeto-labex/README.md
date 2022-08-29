@@ -1,4 +1,9 @@
-link do surge: lying-wine.surge.sh 
+
+9° e último link do surge: detailed-underwear.surge.sh
+
+A página de detalhes (TripDetailsPage) não funciona
+
+1° link do surge: lying-wine.surge.sh 
 
 2° link do surge: wrong-boats.surge.sh
 
@@ -13,3 +18,5 @@ link do surge: lying-wine.surge.sh
 7° link do surge: fuzzy-garden.surge.sh
 
 8° link do surge: disagreeable-mitten.surge.sh
+
+9° link do surge: detailed-underwear.surge.sh

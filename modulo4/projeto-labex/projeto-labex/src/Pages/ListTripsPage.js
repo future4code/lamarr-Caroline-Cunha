@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../constants/constants';
 import useRequestData from '../Hooks/UseRequestData';
 import { goToFormApplicPage, goToBack} from '../constants/coordinator';
+import { ButtonLTP, ContainerLTP, TituloLTP, ButtonInscrever, ListLetter } from '../Components/style';
 
 
 
@@ -12,10 +13,10 @@ const ListTripsPage = () => {
    
     const listTrip = dataListTrip&&dataListTrip.trips.map ((trip)=>{
     return(
-    <p key={trip.id}>
+    <ListLetter key={trip.id}>
         {trip.name}
-        <button onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</button>
-    </p>
+        <ButtonInscrever onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</ButtonInscrever>
+    </ListLetter>
     )
     })
 
@@ -25,8 +26,8 @@ const ListTripsPage = () => {
         
     return (
 
-        <div>
-            <h1>Lista de Viagens</h1>
+        <ContainerLTP>
+            <TituloLTP>Lista de Viagens</TituloLTP>
             {listTrip}
                     
             {/* {isLoadingUser&&"....Carregando!"}
@@ -34,8 +35,8 @@ const ListTripsPage = () => {
             <ul>{!isLoadingUser&&!dataListTrip&&listTrip}</ul>
             </>
             {!isLoadingUser&&!dataListTrip&&errorUser} */}
-            <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-        </div>
+            <ButtonLTP onClick={()=>{goToBack(navigate)}}>Voltar</ButtonLTP>
+        </ContainerLTP>
     )
 }
 

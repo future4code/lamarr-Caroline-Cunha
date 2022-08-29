@@ -2,9 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import useForm from '../Hooks/useForm';
-import { clear } from '@testing-library/user-event/dist/clear';
+// import { clear } from '@testing-library/user-event/dist/clear';
 import {BASE_URL} from '../constants/constants';
 import { goToBack } from '../constants/coordinator';
+import { ContainerLogin, TituloLogin, FormLogin, ButtonLoginEnviar, ButtonVoltarLogin } from '../Components/style';
 
 
 
@@ -31,9 +32,9 @@ const LoginPage = () => {
     }
 
      return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={fazerLogin}>
+        <ContainerLogin>
+            <TituloLogin>Login</TituloLogin>
+            <FormLogin onSubmit={fazerLogin}>
                 <label htmlFor="email">E-mail:</label>
                 <input
                     name="email"
@@ -57,10 +58,10 @@ const LoginPage = () => {
                     title="mínimo de 3 caracteres"
                     required 
                 />
-                <button type="submit">Enviar</button>             
-            </form>
-            <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-        </div>
+                <ButtonLoginEnviar type="submit">Enviar</ButtonLoginEnviar>             
+            </FormLogin>
+            <ButtonVoltarLogin onClick={()=>{goToBack(navigate)}}>Voltar</ButtonVoltarLogin>
+        </ContainerLogin>
     )};
 
 

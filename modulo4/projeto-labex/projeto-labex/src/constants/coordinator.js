@@ -4,6 +4,9 @@ export const goToTripDetailsPage = (navigate, id) => {
     navigate(`/admin/trip/${id}`)
 }
 
+// export const goToTripDetailsPage = (navigate) => {
+//     navigate("/admin/trip/:id")
+// }
 
 export const goToAdimCreate = (navigate) => {
     navigate("/admin/trips/create")

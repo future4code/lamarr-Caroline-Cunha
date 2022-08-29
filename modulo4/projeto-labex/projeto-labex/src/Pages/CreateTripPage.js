@@ -5,6 +5,7 @@ import useProtectedPage from '../Hooks/useProtectedPage';
 import useForm from '../Hooks/useForm';
 import { BASE_URL } from '../constants/constants';
 import { goToBack } from '../constants/coordinator';
+import { ButtonCTPCadastrar, ButtonCTPVoltar, ContainerCTP, FormCTP, TituloCTP } from '../Components/style';
 
 
 
@@ -39,16 +40,12 @@ const CreateTripPage = () => {
             .catch((error)=>console.log(error))
     }
     
-    // const goToBack = () => {
-    //     navigate(-1)
-    // }
-
- 
+    
     return (
-        <>
-            <h1>Criar Novas Viagens</h1>
-            <form onSubmit={newTrip}>
-                <h1>Registrar nova viagem</h1>
+        <ContainerCTP>
+            <TituloCTP>Criar Novas Viagens</TituloCTP>
+            <FormCTP onSubmit={newTrip}>
+                {/* <h1>Registrar nova viagem</h1> */}
                 <label htmlFor="name">Nome:</label>
                 <input type="text" name='name' value={form.name} id="name" onChange={onChange} required/>
                 <label htmlFor="planet">Destino:</label>
@@ -60,10 +57,10 @@ const CreateTripPage = () => {
                 <label htmlFor="durationInDays">Duração:</label>
                 <input type="text" name='durationInDays' value={form.durationInDays} id="durationInDays" onChange={onChange} required/>
                 
-                <button>Cadastrar viagem</button>
-            </form>
-            <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-        </>
+                <ButtonCTPCadastrar>Cadastrar viagem</ButtonCTPCadastrar>
+            </FormCTP>
+            <ButtonCTPVoltar onClick={()=>{goToBack(navigate)}}>Voltar</ButtonCTPVoltar>
+        </ContainerCTP>
     )
 }
 

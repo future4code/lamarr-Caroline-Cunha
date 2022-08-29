@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { goToLogin, goToListPage } from '../constants/coordinator';
+import { ButtonHP, ContainerHP, TituloHP } from '../Components/style';
 
 
 
@@ -8,22 +9,18 @@ const HomePage = () => {
 
     const navigate=useNavigate();
 
-    // const goToListPage = () => {
-    //     navigate("/trips/list")
-    // }
-
-    //     const goToLogin = () => {
-    //     navigate("/login")
-    // }
-          
+    
 
     return (
-        <>
-            <h1>LabeX</h1>
-            <button onClick={()=>{goToListPage(navigate)}}>Lista de Viagens</button>
-            <button onClick={()=>{goToLogin(navigate)}}>Administrador</button>
-                       
-        </>
+        <ContainerHP>
+            <div>
+                <TituloHP>LabeX</TituloHP>
+            </div>
+            <div>
+                <ButtonHP onClick={()=>{goToListPage(navigate)}}>Lista de Viagens</ButtonHP>
+                <ButtonHP onClick={()=>{goToLogin(navigate)}}>Administrador</ButtonHP>
+            </div>     
+        </ContainerHP>
     )
 }
 

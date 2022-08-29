@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { goToBack } from '../constants/coordinator';
+import { ContainerAF, TituloAF, FormularioAF, ButtonAF, ButtonAFEnviar } from '../Components/style';
 
 
 
 const ApplicationFormPage = () => {
 
-    const navigate=useNavigate();
-
-    // const goToBack = () => {
-    //     navigate(-1)
-    // }
+    const navigate=useNavigate(); 
 
     const[inputName, setInputName] = useState()
     const[inputAge, setInputAge] = useState()
@@ -34,9 +31,9 @@ const ApplicationFormPage = () => {
     }
     
     return (
-        <>
-            <p>Formulário de Aplicação</p>
-            <form onSubmit={onSubmit}>
+        <ContainerAF>
+            <TituloAF>Formulário de Aplicação</TituloAF>
+            <FormularioAF onSubmit={onSubmit}>
                 <label>Nome:</label>
                 <input placeholder="Nome" value={inputName} onChange={(event)=>{setInputName(event.target.value)}} required></input>
                 <label>Idade:</label>
@@ -47,11 +44,11 @@ const ApplicationFormPage = () => {
                 <input placeholder="Profissão" value={inputProfession} onChange={(event)=>{setInputProfession(event.target.value)}} required></input>
                 <label>País:</label>
                 <input placeholder="País" value={inputCountry} onChange={(event)=>{setInputCountry(event.target.value)}} required></input>
-                <button onClick={onSubmit}>Enviar</button>
-            </form>
-            <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
+                <ButtonAFEnviar onClick={onSubmit}>Enviar</ButtonAFEnviar>
+            </FormularioAF>
+            <ButtonAF onClick={()=>{goToBack(navigate)}}>Voltar</ButtonAF>
             
-        </>
+        </ContainerAF>
     )
 }
 

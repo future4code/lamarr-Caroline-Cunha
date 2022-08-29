@@ -5,6 +5,7 @@ import useRequestData from '../Hooks/UseRequestData';
 import { BASE_URL } from '../constants/constants';
 import axios from 'axios';
 import { goToBack, goToAdimCreate, goToTripDetailsPage } from '../constants/coordinator';
+import { ContainerAdimHP, TituloAdimHP, ButtonVoltarAdimHP, ButtonFormAdimHP, ButtonDetailsHP, ButtonDeleteHP, ListAdimHP} from '../Components/style';
 
 
 export function AdimHomePage () {
@@ -25,22 +26,22 @@ export function AdimHomePage () {
     }
 
     const requisitionTrip = dataTrip&&dataTrip.trips.map((data)=>{
-        return <div key={data.id}>{data.name}
-        <button onClick={()=>{goToTripDetailsPage(navigate)}}>Detalhes</button>
-        <button onClick={()=>{deleteTrip(data.id)}}>Deletar Viagem</button></div>
+        return <ListAdimHP key={data.id}>{data.name}
+        <ButtonDetailsHP onClick={()=>{goToTripDetailsPage(navigate)}}>Detalhes</ButtonDetailsHP>
+        <ButtonDeleteHP onClick={()=>{deleteTrip(data.id)}}>Deletar Viagem</ButtonDeleteHP></ListAdimHP>
         
     })
    
     return(
-    <div>
-    <h1>Área Administrativa</h1>
+    <ContainerAdimHP>
+    <TituloAdimHP>Área Administrativa</TituloAdimHP>
     
     {requisitionTrip}
     
-    <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-    <button onClick={()=>{goToAdimCreate(navigate)}}>Formulário</button>
+    <ButtonVoltarAdimHP onClick={()=>{goToBack(navigate)}}>Voltar</ButtonVoltarAdimHP>
+    <ButtonFormAdimHP onClick={()=>{goToAdimCreate(navigate)}}>Formulário</ButtonFormAdimHP>
 
-    </div>
+    </ContainerAdimHP>
     )
 }
 
