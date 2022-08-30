@@ -1,6 +1,8 @@
 
 9° e último link do surge: detailed-underwear.surge.sh
 
+email:carolinemcs@hotmail.com    senha: 123456
+
 A página de detalhes (TripDetailsPage) não funciona
 
 1° link do surge: lying-wine.surge.sh 
