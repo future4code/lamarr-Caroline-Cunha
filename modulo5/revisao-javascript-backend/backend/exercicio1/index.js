@@ -21,22 +21,27 @@
 
 // let kelvin = celsius + 273
 
-// const converteTemperatura = (celsius,letra) => {
+const converteTemperatura = (celsius,letra) => {
     
-//     if (fahrenheit) {
-        
-//         callback(`${celsius} graus celsius é igual a ${fahrenheit} graus fahrenheit.`)
+    let final;
+    let valorCelsius=0;
     
-//     }if (kelvin) {
-        
-//         callback(`${celsius} graus celsius é igual a ${kelvin} kelvin.`)
+    letra==="F" ? valorCelsius=Number(celsius)*1.8+32:
+    letra==="K" ? valorCelsius=Number(celsius)+273:{};
+    if (letra==="F" && typeof celsius !=="strting") {
+        return final=`${celsius} graus Celsius é equivalente a ${valorCelsius} graus fahrenheit.`
     
-//     }else{
-//         callback("Informe o número correto")
-//     }
-// }
-// console.log(converteteTemperatura)
-// converteTemperatura (fahrenheit, letra)
-// converteTemperatura (kelvin, letra)
+    }else if (letra==="K") {
+        return final=`${celsius} graus Celsius é equivalente a ${valorCelsius} kelvin.`
 
-console.log("boa noite")
+    }else{
+        return final=`Erro. Parâmetro inválido`
+    }
+   
+  
+}
+
+console.log(converteTemperatura(50, "K"))
+console.log(converteTemperatura(200, "F"))
+console.log(converteTemperatura(100, "K"))
+console.log(converteTemperatura(32, "F"))
