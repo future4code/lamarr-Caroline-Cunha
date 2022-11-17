@@ -1,0 +1,220 @@
+
+-- RELAÇÕES SQL
+
+### Exercício 1
+
+-- a) a chave estrangeira (foreign key) indica a relação entre uma tabela
+--    e a chave primária de outra tabela.
+
+
+SELECT * from Filmes;
+
+
+-- letra b)
+CREATE TABLE Avaliacao (
+	id INT PRIMARY KEY,
+    comment TEXT NOT NULL,
+    avaliaçao FLOAT NOT NULL,
+    fk_id INT,
+    FOREIGN KEY (fk_id) REFERENCES Filmes(id)
+);
+
+
+INSERT INTO Avaliacao (id, comment, avaliaçao, fk_id)
+VALUES(
+	"001",
+    "Uma comédia romântica meio morna.",
+    "7",
+    "001"
+);
+
+-- letra c)
+INSERT INTO Avaliacao (id, comment, avaliaçao, fk_id)
+VALUES(
+	"009",
+    "Será que existe?",
+    "7",
+    "001"
+);
+
+-- Comentário: Apesar de o id ser inválido, já que existem apenas 4 filmes cadastrados,
+--              o comentário foi criado, e incluído como id 009 na tabela. Como os dados
+--              são inseridos manualmente pelo desenvolvedor, acredito que apenas uma
+--              restrição especificada no código poderia barrar este tipo de equívoco.
+
+SELECT * FROM Avaliacao;
+
+-- letra d)
+ALTER TABLE Avaliacao DROP COLUMN avaliaçao;
+
+-- letra e)
+
+DELETE FROM Avaliacao
+WHERE id=001;
+
+-- O resultado foi a exclusão do item incluído com comentário sobre o filme de id = 001.
+
+
+### Exercício 2
+
+CREATE TABLE MovieCast (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    fk_filmes INT,
+    fk_ator VARCHAR(255),
+    FOREIGN KEY(fk_filmes) REFERENCES Filmes(id),
+    FOREIGN KEY(fk_ator) REFERENCES Actor (id)
+);
+
+-- letra a)
+-- Esta tabela alia duas tabelas previamente elaboradas: filmes, e atores. Ao criar Foreign Keys relacionados
+--    às primary keys, as tabelas são relacionadas, podendo indicar em que filmes (tabela 1) os atores 
+--    (tabela 2) atuaram.alter
+
+
+DESCRIBE Filmes;
+DESCRIBE Actor;
+
+-- a tabela de atores dos filmes tem duas colunas, que indicam os ids de cada um dos itens
+--  a serem relacionados (ator e filme), para a partir daí permitir a relação dos dados das tabelas.
+
+SELECT * FROM Actor;
+
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+  "007", 
+  "Rodrigo Santoro",
+  300000,
+  "1975-08-22", 
+  "male"
+);
+-- letra b)
+INSERT INTO MovieCast (fk_Filmes, fk_ator)
+VALUES(
+	"001",
+    "001"
+);
+
+INSERT INTO MovieCast (fk_Filmes, fk_ator)
+VALUES(
+	"001",
+    "002"
+);
+
+INSERT INTO MovieCast (fk_Filmes, fk_ator)
+VALUES(
+	"002",
+    "003"
+);
+
+INSERT INTO MovieCast (fk_Filmes, fk_ator)
+VALUES(
+	"004",
+    "007"
+);
+
+INSERT INTO MovieCast (fk_Filmes, fk_ator)
+VALUES(
+	"004",
+    "008"
+);
+
+INSERT INTO MovieCast (fk_Filmes, fk_ator)
+VALUES(
+	"003",
+    "005"
+);
+
+SELECT * FROM MovieCast;
+
+-- letra c)
+-- a solicitação deu erro já que a relação ficou inviável pela inexistência de um id 009
+INSERT INTO MovieCast (fk_Filmes, fk_ator)
+VALUES(
+	"009",
+    "005"
+);
+
+
+-- letra d)
+DELETE FROM MovieCast
+WHERE id = 002;
+
+-- foi feita a exclusão do item de id = 002, e o banco de dados retornou a tabela
+--    agora com 5 itens
+
+
+DESCRIBE Actor;
+
+-- para viabilizar a continuidade do execício, vários comandos foram dados incluindo informações
+--   anteriormente deletadas ou modificadas (ex. do nome de Fernada Montenegro)
+
+SELECT * FROM Avaliacao;
+
+ALTER TABLE Avaliacao
+ADD avaliaçao TEXT;
+
+INSERT INTO Avaliacao (id, comment, avaliaçao, fk_id)
+VALUES(
+	"001",
+    "Uma comédia romântica meio morna.",
+    "7",
+    "001"
+);
+
+INSERT INTO Avaliacao (id, comment, avaliaçao, fk_id)
+VALUES(
+	"002",
+    "Leve e divertido",
+    "10",
+    "002"
+);
+
+INSERT INTO Avaliacao (id, comment, avaliaçao, fk_id)
+VALUES(
+	"003",
+    "FIlme porreta baseado na obra de Jorge Amado",
+    "8",
+    "003"
+);
+
+INSERT INTO Avaliacao (id, comment, avaliaçao, fk_id)
+VALUES(
+	"004",
+    "VIolência e realidade, com excelentes interpretações",
+    "8",
+    "004"
+);
+
+UPDATE Actor
+SET nome = "Fernanda Montenegro"
+WHERE id = "003";
+
+
+### Exercício 3
+
+-- letra a)
+SELECT * FROM Filmes
+INNER JOIN Avaliacao On Filmes.id = Avaliacao.fk_id;
+
+
+-- Usar o join permite trazer dados de duas tabelas que podem ser relacionadas. No caso no inner join,
+--   ele retorna registros relacionados nas duas tabelas. Já o ON define a condição pela qual as tabelas
+--   serão juntadas.
+--   Nesta proposta foram aliadas as tabelas com a avaliação e os filmes
+
+DELETE FROM Filmes
+WHERE id = 9;
+
+SELECT * FROM Avaliacao;
+
+DELETE FROM Avaliacao
+WHERE id = 9;
+
+
+-- letra b)
+SELECT Filmes.id, Filmes.titulo, Filmes.avaliaçao FROM Filmes;
+
+SELECT Filmes.id, Filmes.titulo, Filmes.avaliaçao FROM Filmes
+INNER JOIN Avaliacao ON Filmes.id=fk_id;
+
+SELECT * FROM Filmes;
