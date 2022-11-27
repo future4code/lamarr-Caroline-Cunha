@@ -1,0 +1,136 @@
+-- APROFUNDAMENTO SQL
+
+-- Exercício 1
+
+-- letra a) o DROP COLUMN vai remover a coluna de salarios
+
+-- letra b) o ALTER junto ao CHANGE altera o nome definido primeiro pelo segundo nome indicado. No caso gênero
+-- será trocado por sexo. O VARCHAR indica que será uma string com 6 caracteres
+
+-- letra c) Neste caso o termo gênero será trocado pelo mesmo, gênero. e a string poderá ter até 255 caracteres
+
+-- letra d)
+ALTER TABLE Actor CHANGE sexo sexo VARCHAR (100);
+
+DESCRIBE Actor;
+SHOW TABLES;
+SELECT * FROM Actor;
+
+
+-- Exercício 2
+
+-- letra a)
+UPDATE Actor
+SET nome = "Arlette Torres", dataDeNascimento = "1929-10-18"
+WHERE id = "003";
+
+SELECT * FROM Actor;
+
+-- letra b)
+
+UPDATE Actor
+SET nome = "JULIANA PAES"
+WHERE id = "005";
+
+SELECT * FROM Actor;
+
+-- letra c)
+
+UPDATE Actor
+SET nome = "Julio Paes", salario = "72000", dataDeNascimento ="1979-03-25", sexo = "male"
+WHERE id = "005";
+
+-- letra d)
+
+UPDATE Actor
+SET nome = "Robson Crusoé"
+WHERE id = "009";
+-- Não apareceu como erro (veio verde), mas inofrmou que não houve nenhuma linha afetada, e 0 mudanças.
+
+-- Exercício 3
+
+-- letra a)
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+  "007", 
+  "Fernanda Montenegro",
+  300000,
+  "1929-10-19", 
+  "female"
+);
+-- como eu tinha alterado o nome para o nome real, Fernanda Montenegro estava como Arlete Torres. Por isso adicionei de novo.
+
+SELECT * FROM Actor;
+
+DELETE FROM Actor
+WHERE nome = "Fernanda Montenegro";
+
+-- letra b)
+DELETE FROM Actor
+WHERE 
+sexo = "male" AND salario > "1000000";
+
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+	"001",
+    "Tony Ramos",
+    400000,
+    "1948-08-25",
+    "homem"
+);
+
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+  "006", 
+  "Antônio Fagundes",
+  400000,
+  "1949-04-18", 
+  "male"
+);
+
+-- Exercício 4
+
+-- letra a)
+SELECT MAX(salario) FROM Actor; 
+
+-- letra b)
+SELECT MAX(salario) FROM Actor
+WHERE sexo="female";
+
+-- letra c)
+SELECT COUNT(*) FROM Actor
+WHERE sexo = "female";
+
+-- letra d)
+SELECT SUM(salario) FROM Actor;
+
+
+UPDATE Actor
+SET sexo = "male"
+WHERE id = "001";
+
+UPDATE Actor
+SET sexo = "female"
+WHERE id = "002";
+
+-- Exercício 5
+
+-- letra a)
+
+-- letra b)
+SELECT id, nome FROM Actor
+ORDER BY nome DESC; 
+
+-- letra c)
+SELECT * FROM Actor
+ORDER BY salario ASC;
+
+-- letra d)
+SELECT * FROM Actor
+ORDER BY salario ASC
+LIMIT 3;
+
+-- letra e)
+SELECT AVG(salario), sexo
+FROM Actor
+GROUP BY sexo;
