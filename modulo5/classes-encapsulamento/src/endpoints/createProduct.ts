@@ -1,6 +1,8 @@
 import { Request, Response } from "express"
 import connection from "../database/connection"
-import { Product } from "../models/Product"
+// import { Product } from "../models/Product"
+import { Product } from "../class/Product"
+import { ProductDataBase } from "../class/ProductDataBase"
 
 export const createProduct = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -12,15 +14,16 @@ export const createProduct = async (req: Request, res: Response) => {
             throw new Error("Body inválido.")
         }
 
-        const newProduct: Product = {
-            name,
-            price
-        }
-
-        await connection("Labe_Products").insert({
-            name: newProduct.name,
-            price: newProduct.price
-        })
+        // const newProduct: Product = {
+        //     name,
+        //     price
+        // }
+        // await connection("Labe_Products").insert(newProduct)
+        
+        const newProduct=new Product(name, price)
+        const productDB=new ProductDataBase(connection);
+        productDB.insertProduct(newProduct)      
+        
         
         res.status(201).send({ message: "Produto criado", product: newProduct })
     } catch (error) {

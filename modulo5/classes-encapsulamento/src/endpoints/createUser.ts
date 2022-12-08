@@ -1,6 +1,8 @@
 import { Request, Response } from "express"
 import connection from "../database/connection"
-import { User } from "../models/User"
+// import { User } from "../models/User"
+import { User } from "../class/User"
+import { UserDataBase } from "../class/UserDataBase"
 
 export const createUser = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -12,15 +14,16 @@ export const createUser = async (req: Request, res: Response) => {
             throw new Error("Body inválido.")
         }
 
-        const newUser: User = {
-            email,
-            password
-        }
+        // const newUser: User = {
+        //     email,
+        //     password
+        // }
 
-        await connection("Labe_Users").insert({
-            email: newUser.email,
-            password: newUser.password
-        })
+        const newUser=new User(email, password)
+        const UserDB=new UserDataBase(connection);
+        UserDB.insertUser(newUser);
+
+        // await connection("Labe_Users").insert(newUser)
         
         res.status(201).send({ message: "Usuário criado", user: newUser })
     } catch (error) {
