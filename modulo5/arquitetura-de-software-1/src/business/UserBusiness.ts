@@ -1,18 +1,22 @@
 import { userDataBase } from "../dataBase/userDataBase"
+import { user } from "../types/user"
 
 export class UserBusiness {
     
-    createUser = async (input:any): Promise<void> => {
+    public createUser = async (input:any): Promise<void> => {
 
         try{
-            const { name, nickname, email, password } = input
+            const { name, email, password } = input
 
-            if (!name ||!nickname || !email || !password ) {
-                throw new Error('Preencha os campos "name","nickname", "email" e "password"')
+            if (!name || !email || !password ) {
+                throw new Error('Preencha os campos "name", "email" e "password"')
             }
 
-            if(password.lenght<6){
-                throw new Error("Senha muito curta")
+            if(email.indexOf("@") === -1){
+                throw new Error("Email inválido")
+            }
+            if(password.length<6){
+                throw new Error("A senha deve ter no mínimo 6 caracteres")
             }
 
             const id: string = Date.now().toString()
@@ -22,7 +26,6 @@ export class UserBusiness {
             await UserDataBase.insertUser({
                      id,
                      name,
-                     nickname,
                      email,
                      password
                   })
@@ -31,6 +34,22 @@ export class UserBusiness {
             throw new Error(error.message)
         }
     }
+   
+    async get(): Promise<user[]>  {
+				
+        return await new userDataBase().get();
+    }
 
-}
+
+
+    deleteUser = async (input: {id:string}) => {
+				
+        if(!input.id){
+            throw new Error("Insira um id!")
+        }
+
+            return await new userDataBase().deleteUser(input.id);
+        }
+};
+
 

@@ -1,13 +1,24 @@
 ### Teste
 GET http://localhost:3003/ping
 
-### Teste 1
+### Create User
 POST http://localhost:3003/user
 Content-Type: application/json
 
-{
-   "name": "Caroline",
-   "nickname": "Carol",
-   "email": "c@gmail.com",
-   "password": "123456"
-}
+{ 
+	"name": "Kelly Kapoor",
+  	"email": "kelly@dundermifflin.com",
+  	"password": "fa8s7e6fia7se6ga8i67gf9a7se6f8a7s6e5gaes"
+}	
+
+### Get All Users
+
+GET http://localhost:3003/user/
+Content-Type: application/json
+
+
+### Delete User
+
+DELETE http://localhost:3003/user/1674058432629
+
+Content-Type: application/json

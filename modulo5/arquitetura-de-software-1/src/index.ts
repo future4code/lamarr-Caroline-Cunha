@@ -7,7 +7,11 @@ const userController = new UserController()
 
 app.post('/user', userController.createUser)
 
-app.get('/user', userController.findUser)
+app.get('/user', userController.getAll)
+
+app.delete('/user/:id', userController.deleteUser)
+
+
 
 
 
