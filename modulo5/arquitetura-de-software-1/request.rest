@@ -1,0 +1,13 @@
+### Teste
+GET http://localhost:3003/ping
+
+### Teste 1
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+   "name": "Caroline",
+   "nickname": "Carol",
+   "email": "c@gmail.com",
+   "password": "123456"
+}
