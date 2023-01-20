@@ -1,0 +1,14 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Yoda",
+    "email": "starwars@email.com",
+    "password": "000222"
+}
+
+
+### Get ALl Users
+
+GET  http://localhost:3003/user/getAll
+Content-Type: application/json
