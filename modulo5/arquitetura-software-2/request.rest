@@ -1,14 +1,28 @@
+### Create User
+
 POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name": "Yoda",
-    "email": "starwars@email.com",
-    "password": "000222"
+    "name": "Luiz",
+    "email": "luiz@email.com",
+    "password": "0002225"
 }
 
 
-### Get ALl Users
+### Get All Users
 
 GET  http://localhost:3003/user/getAll
 Content-Type: application/json
+
+### Create movie
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "Rogue One: uma história Star Wars", 
+    "description":"Ficção científica/ação",
+    "durationInMinutes": 133, 
+    "yearOfRelease": 2016
+}
