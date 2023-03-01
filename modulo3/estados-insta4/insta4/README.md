@@ -1,0 +1,1 @@
+Link do surge: https://strange-support.surge.sh/

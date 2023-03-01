@@ -5,14 +5,17 @@
 
 // EXERCÍCIO 01
 
-const array = [3,2,1,4,7]
+// const array = [3,2,1,4,7]
 
 function retornaTamanhoArray(array) {
    
     return array.length
 }
 
-console.log(retornaTamanhoArray(array))
+// console.log(retornaTamanhoArray(array))
+
+
+
 
 
 
@@ -23,7 +26,7 @@ function retornaArrayInvertido(array) {
 return array.reverse()
 
 }
-console.log(retornaArrayInvertido(array))
+// console.log(retornaArrayInvertido(array))
 
 // Desafio do Exercício 2
 
@@ -65,7 +68,23 @@ function retornaArrayOrdenado(array) {
 console.log (retornaArrayOrdenado(array))
 
 
+
+
+
 // EXERCÍCIO 04
+
+
+function retornaNumerosPares (array) {
+    function pares (array) {
+     return array % 2 === 0
+ }             
+ 
+ let soNumerosPares = array.filter (pares)
+ 
+ return soNumerosPares
+ 
+ } 
+  
 
 // let array2 = [1,2,3,4,5,6,7,8]
 
@@ -77,6 +96,7 @@ console.log (retornaArrayOrdenado(array))
 // let numerosPares = array2.filter(retornaNumerosPares)
 
 // console.log ((numerosPares))
+
 
 
 function retornaNumerosPares (array) {
@@ -95,6 +115,16 @@ return soNumerosPares
 // Exercício 05
 
 function retornaNumerosParesElevadosADois (array) {
+
+// 
+ 
+
+
+// EXERCÍCIO 05
+
+
+   function retornaNumerosParesElevadosADois (array) {
+
     
     let novaArray = []
     const soPares = array.filter((array) => {
@@ -105,7 +135,8 @@ function retornaNumerosParesElevadosADois (array) {
             }
             return novaArray
         }
-       
+
+
     })
     
 }
@@ -113,9 +144,31 @@ function retornaNumerosParesElevadosADois (array) {
 retornaNumerosParesElevadosADois()
 
 
+    
+    //     for (let numero of array) {
+    //         if (numero % 2 ===0){
+               
+    //         let novoArray = []
+    //         novoArray.push(numero^2)  
+                               
+    //         }
+    
+    //     return novoArray
+    //         }
+    //     }
+    //    retornaNumerosPares()
+    
+
+
+
+    
 // EXERCÍCIO 06
 
+
 // let arrayDado = [1,2,3,4,5,6,7]
+
+
+let arrayDado = [1,2,3,4,5,6,7]
 
 function retornaMaiorNumero(array) {
     let maiorNumero = 0
@@ -128,11 +181,23 @@ function retornaMaiorNumero(array) {
     return maiorNumero
 }
 
+// function retornaMaiorNumero(array) {
+// let maiorNumero = 0
+// for (let i=0; i<array.length; i++){
+//     let numeroDoArray=array[i]
+//     if (numeroDoArray>maiorNumero) {
+//         maiorNumero=array[i]
+//     }
+// }
+// return maiorNumero
+// }
+
 // console.log(retornaMaiorNumero(arrayDado))
 
 
 
 // EXERCÍCIO 07
+
 
 
 function retornaObjetoEntreDoisNumeros(num1, num2) {
@@ -173,8 +238,58 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
         return `Isósceles`
     }
    
+
+function retornaObjetoEntreDoisNumeros(num1, num2) {
+    
+        const objeto = {
+            maiorNumero: Math.max(num1,num2),
+            maiorDivisivelPorMenor: Math.max (num1,num2) % Math.min (num1,num2) === 0,
+            diferenca: Math.max (num1,num2) - Math.min (num1,num2),
+        }
+           return objeto
+       }
+    
+
+
+// EXERCÍCIO 08
+
+function retornaNPrimeirosPares(n) {
+    
+        const numPar = []
+        
+        for (let i=0; numPar.length < n; i++) {
+        
+            if (i % 2 === 0) {
+                numPar.push(i)
+        }
+        }     
+        return numPar
+    }
+    
+
+
+// EXERCÍCIO 09
+
+function classificaTriangulo(ladoA, ladoB, ladoC) {
+
+if (ladoA === ladoB && ladoB === ladoC){
+
+    return ("Equilátero")
+
+}else if (ladoA !== ladoB && ladoB !== ladoC && ladoC !== ladoA) {
+
+    return ("Escaleno")
+
+}else{
+
+    return ("Isósceles")
+}
+
+
 }
 classificaTriangulo()
+
+
 
 
 // EXERCÍCIO 10
@@ -182,6 +297,10 @@ classificaTriangulo()
 
 function retornaSegundoMaiorESegundoMenor(array) {
     
+
+function retornaSegundoMaiorESegundoMenor(array) {
+      
+
         let lista = array.sort(function(a,b) {
              return a-b})  
             let segundoMaiorESegundoMenor = []
@@ -189,6 +308,7 @@ function retornaSegundoMaiorESegundoMenor(array) {
             return (segundoMaiorESegundoMenor)
         }
      
+
 
 
     // console.log(array)
@@ -201,7 +321,9 @@ function retornaSegundoMaiorESegundoMenor(array) {
     // let segundoMenor = lista[1]
    
 
+
 // EXERCÍCIO 11
+
 function retornaChamadaDeFilme(filme) {
     const listaFilme = {
         nome: "O Diabo Veste Prada",
@@ -213,7 +335,23 @@ function retornaChamadaDeFilme(filme) {
 }
 
 
+// function retornaChamadaDeFilme(filme) {
+//     const listaFilme = {
+//         "nome": "O Diabo Veste Prada",
+//         "ano": 2006,
+//         "diretor": "David Frankel",
+//         "atores": ["Maryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
+//     }
+//  return `Venha assistir ao filme ${listaFilme.nome}, de ${listaFilme.ano}, dirigido por ${listaFilme.diretor} e estrelado por ${listaFilme.atores[0]}, ${listaFilme.atores[1]}, ${listaFilme.atores[2]}, ${listaFilme.atores[3]}.`
+// }
+// retornaChamadaDeFilme()
+
+
+
+
+
 // EXERCÍCIO 12
+
 function retornaPessoaAnonimizada(pessoa) {
 
     const listaPessoa = {
@@ -227,6 +365,7 @@ function retornaPessoaAnonimizada(pessoa) {
         
     }
 }
+
 
 
 // EXERCÍCIO 13A
@@ -252,6 +391,33 @@ const lista = [
 }    
 retornaPessoasAutorizadas(pessoas)
 
+retornaPessoaAnonimizada()
+
+
+
+// EXERCÍCIO 13A
+
+function retornaPessoasAutorizadas(pessoas) {
+    
+    const lista = [
+        { nome: "Paula", idade: 12, altura: 1.8},
+        { nome: "João", idade: 20, altura: 1.3},
+        { nome: "Pedro", idade: 15, altura: 1.9},
+        { nome: "Luciano", idade: 22, altura: 1.8},
+        { nome: "Artur", idade: 10, altura: 1.2},
+        { nome: "Soter", idade: 70, altura: 1.9}
+    ]
+            for (let lista of pessoas) {
+                if (lista.altura >= 1.5 && lista.idade > 14 && lista.idade && lista.idade < 60) {
+                    const visitAutorizados = lista.push((lista) =>{
+                    return visitAutorizados
+            })
+        }
+    }
+    }  
+
+
+
 // }
 // if (idade >= 18 && altura >= 160 && temProblemaCardiaco === "N") {
     //     console.log("Pode entrar")
@@ -272,22 +438,37 @@ function retornaContasComSaldoAtualizado(contas) {
 
 }
 
+
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
+
   
   let ordemAlfabeticaPacientes = consultas.sort ((a,b) => a - b)
 
   return ordemAlfabeticaPacientes
+
+    
+        let ordemAlfabeticaPacientes = consultas.sort ((a,b) => a - b)
+      
+        return ordemAlfabeticaPacientes
+
 }
+
 
 // EXERCÍCIO 15B
 
 function retornaArrayOrdenadoPorData(consultas) {
+
    let datasConsultaPacientes = consultas.sort((a,b) => a - b)
 
   return datasConsultaPacientes
-}
 
+   
+   let datasConsultaPacientes = consultas.sort((a,b) => a - b)
+
+return datasConsultaPacientes
+
+}
 
 
 
@@ -367,7 +548,7 @@ function retornaArrayOrdenadoPorData(consultas) {
 // console.log ("A palavra batata está presente?", novaFrase.includes('batata'))
 
 
-// Exercício 6
+// Exercício 6 - Arrays
 
 // const listaCompras = ["batata", "cenoura", "beterraba"]
 
@@ -385,7 +566,7 @@ function retornaArrayOrdenadoPorData(consultas) {
 // console.log (listaCompras)
 
 
-// Exercício 7
+// Exercício 7 - funções
 
 // const array = [6,7,8,9,10]
 
@@ -420,6 +601,7 @@ function retornaArrayOrdenadoPorData(consultas) {
 //     return arrayNumeros
 // }
 // console.log(criarArray2(array))
+
 
 // const array = [1,2,3,4,5,6]
 
@@ -462,3 +644,190 @@ function retornaNumerosParesElevadosADois (array) {
     })
     
 }
+
+// Exercício 8 - Objetos
+
+// const pessoa = {
+//     nome:"Gustavo",
+//     idade:"45",
+//     generoMusical:"Blues",
+// }
+
+// const novaPessoa = {...pessoa,
+//     nome:"Rafaela",
+//     idade:"45",
+//     generoMusical:"Blues",
+// }
+
+// console.log (`O nome da pessoa é ${novaPessoa.nome}, ela tem ${novaPessoa.idade} anos e gosta muito de ${novaPessoa.generoMusical}.`)
+
+
+// Exercício 9 - Condicionais
+
+// const numUsuario = Number(prompt("Digite um número."))
+
+// function analisarPar (n) {
+//     if (n % 2 === 0) {
+//         return `é par`
+
+//     }else{
+//         return `é impar`
+//     }
+// }
+
+// console.log(analisarPar(numUsuario))
+
+// COM IF/ELSE
+
+// const nomeBicho = prompt("Qual o seu bicho de estimação? cachorro, gato, vaca, ou que outro bicho?")
+
+// function verSomBicho (bicho) {
+
+//     if (bicho === "cachorro") {
+
+//         console.log("Au au")
+
+//     } if (bicho === "gato") {
+
+//         console.log("Miau")
+
+//     }else if (bicho === "vaca"){
+//         console.log ("Muuu")
+
+//     }else{
+//         console.log("Sem barulho reconhecido :(")
+//     }
+// }
+
+// verSomBicho(nomeBicho)
+
+// COM SWITCH CASE
+
+// const nomeBicho = prompt("Qual o seu bicho de estimação? cachorro, gato, vaca, ou que outro bicho?")
+
+// switch (nomeBicho) {
+//     case "cachorro":
+//         console.log ("Au au")
+//         break
+//     case "gato":
+//         console.log ("Miau")
+//         break
+//     case "vaca":
+//         console.log ("Muuu")
+//         break
+//     default:
+//         console.log ("Sem barulho reconhecido :(")
+//         break  
+// }
+
+
+// function verSomBicho (bicho) {
+
+// EXERCÍCIO 10 - LAÇOS
+
+
+// const arrayNum = [11,15,18,14,12,13]
+// let maior = -Infinity
+// for (let i = 0; i < arrayNum.length; i++) {
+//     if (arrayNum[i]> maior) {
+//         maior = arrayNum[i]
+//     }
+// }
+
+// console.log(`O maior número é ${maior}`)
+
+// const arrayNum = [11,15,18,14,12,13, 54]
+
+// let maior = -Infinity
+
+// for (let numero of arrayNum) {
+//     if (numero> maior) {
+//         maior = numero
+//     }
+// }
+
+// console.log(`O maior número é ${maior}`)
+
+
+// const prof = {
+
+//     nome: "Letícia Chijo",
+//     idade: 27,
+//     aulasFront: true,
+//     aulasBack: false,
+//     jogosFavoritos: ["Chrono Trigger", "Undertale", "Hollow Knight"],
+//     contaPiada: () => console.log("É pave ou pacume?"),
+//     pet: {
+//         nome: "Polly",
+//         especie: "cachorrinho",
+//         raca: "Lhasa Apso",
+//         snacksFavoritos: ["biscoito", "maçã", "frango"]
+//     }
+// }
+
+// let aulasBack
+// let aulasFront
+
+// if (aulasFront) {
+//     aulasFront = "Dou"
+// }else{
+//     aulasFront = "Não dou"
+// }
+
+// if (aulasBack) {
+//     aulasBack = "Dou"
+// }else{
+//     aulasBack = "Não dou"
+// }
+
+// const frase = `Oi! Eu me chamo ${prof.nome} e tenho ${prof.idade} anos. ${prof.aulasFront} aula de front  e ${prof.aulasBack} aula de back. Meus jogos favoritos são ${prof.jogosFavoritos}. Tenho uma cachorrinha chamada ${prof.pet.nome} que gosta de comer ${prof.pet.snacksFavoritos[1]} `
+// console.log (frase)
+
+// prof.contaPiada()
+
+
+// EXERCÍCIO 11 - 
+
+// Exercício WarmUp Números Primos
+// function analisarNumPrimo (n) {
+//     let primo = 1
+//     for (let i = n; i >=1; i++)
+//     primo = i
+//     if (n/1 === n && n/n === 1 ) {
+//         console.log( `É primo`)
+//     } else {
+//         console.log( `Não é primo`)
+//     }
+// }
+// 
+// function analisarNumPrimo (n) {
+//       let divisores = 0
+//         for (let i = 0; i <=n; i++)
+    
+//         if (n/1 === n && n/n === 1 ) {
+//             console.log(`É primo`)
+       
+//         } else {
+//             console.log( `Não é primo`)
+//         }
+//     }
+
+//     console.log (analisarNumPrimo(20))
+
+// function checaNumeroPrimo(n) {
+//     let divisores = 0
+    
+//     for (let i = 1; i <= n; i++)
+//     if (n % i == 0) {
+//     divisores++;
+//     }
+    
+//     if (divisores == 2){
+//     return 'É primo';
+//     } else {
+//     return 'Não é primo';
+//     }
+//     }
+    
+//     checaNumeroPrimo(2)
+
