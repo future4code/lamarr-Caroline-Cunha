@@ -1,0 +1,262 @@
+-- Exercício 1
+CREATE TABLE Actor (
+	id VARCHAR(255) PRIMARY KEY,
+    -- VARCHAR É UTILIZADO PARA STRINGS E O NÚMERO DEFINE A QUANTIDADE MÁXIMA DE CARACTERES
+    -- PRIMARY KEY É UMA CHAVE ÚNICA NA TABELA
+    nome VARCHAR(255) NOT NULL,
+    -- NOT NULL INDICA QUE PRECISA SER COLOCADO ALGUM DADO PARA ESTE PARÂMETRO
+    salario FLOAT NOT NULL,
+    dataDeNascimento DATE NOT NULL,
+    -- DATE REPRESENTA DATAS
+    sexo VARCHAR(6) NOT NULL  
+);
+-- letra c)
+DESCRIBE Actor;
+
+-- Exercicio 2
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+	"001",
+    "Tony Ramos",
+    400000,
+    "1948-08-25",
+    "homem"
+);
+
+-- letra a)
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+	"002",
+    "Glória Pires",
+    1200000,
+    "1963-08-23",
+    "mulher"
+);
+
+
+-- letra b)
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+	"002",
+    "Luiza",
+    1200000,
+    "1963-08-21",
+    "mulher"
+);
+-- indicou a duplicata do id 002 para uma primary key, que precisa ser única
+
+INSERT INTO Actor (id, nome, salario)
+VALUES(
+  "003", 
+  "Fernanda Montenegro",
+  300000,
+  "1929-10-19", 
+  "female"
+);
+
+-- a quantidade de parâmetros precisam ser iguais. O sistema então não aceita incluir 3 informações se a tabela tem 5
+
+-- letra c)
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+  "003", 
+  "Fernanda Montenegro",
+  300000,
+  "1929-10-19", 
+  "female"
+);
+
+
+-- letra d)
+INSERT INTO Actor (id, salario, dataDeNascimento, sexo)
+VALUES(
+  "004",
+  400000,
+  "1949-04-18", 
+  "male"
+);
+-- o campo nome não pode ser definido como nulo, e é exigido
+
+
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+  "004",
+  "Jorge",
+  400000,
+  "1949-04-18", 
+  "male"
+);
+
+-- letra e)
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+  "005", 
+  "Juliana Paes",
+  719333,
+  1979-03-26, 
+  "female"
+);
+-- o sistema esta indicando erro porque a data está sem aspas
+
+-- letra f)
+
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+  "005", 
+  "Juliana Paes",
+  719333,
+  "1979-03-26", 
+  "female"
+);
+
+
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+  "003", 
+  "Fernanda Montenegro",
+  300000,
+  "1929-10-19", 
+  "female"
+);
+-- deu erro pq já existe
+
+INSERT INTO Actor (id, nome, salario, dataDeNascimento, sexo)
+VALUES(
+  "006", 
+  "Antônio Fagundes",
+  400000,
+  "1949-04-18", 
+  "male"
+);
+
+
+-- Exercício 3
+SELECT * FROM Actor;
+
+SELECT id, salario from Actor;
+
+SELECT id, nome from Actor WHERE sexo = "male";
+
+
+-- letra a)
+SELECT * from Actor WHERE sexo = "female";
+
+-- letra b)
+SELECT salario from Actor WHERE nome = "Tony Ramos";
+
+-- letra c)
+SELECT * from Actor WHERE sexo = "invalid";
+-- nenhum retorno para sexo inválido
+
+
+-- letra d)
+SELECT id, nome, salario from Actor WHERE salario<500;
+-- sem retorno poque todos os atores recebem mais do que R$ 500,00
+
+
+-- letra e)
+SELECT id, nome from Actor WHERE id = "002";
+
+
+
+-- Exercício 4
+
+SELECT * from Actor
+WHERE (nome LIKE "A%" OR nome LIKE "J%") AND salario > 300000; 
+
+-- letra a)
+-- A query especifica a letra inicial dos artistas dos quais precisa. Usando operadores lógicos ela
+-- define que os nomes poderão com A ou J, e agregado a isso, precisa ganhar mais de 300 mil. Desta
+-- forma, apenas atendendo a estas condições que aparecerá na tabela
+
+
+-- letra b)
+SELECT * from Actor
+WHERE (nome NOT LIKE "A%") AND salario > 350000; 
+
+-- letra c)
+
+SELECT * from Actor
+WHERE (nome LIKE "%G%" OR nome LIKE "%g%"); 
+
+-- letra d)
+
+SELECT * from Actor
+WHERE (nome LIKE "%G%" OR nome LIKE "%g%" OR nome LIKE "%A%" OR nome LIKE "%a%") AND salario BETWEEN 350000 AND 900000; 
+
+-- Exercício 5
+
+-- letra a)
+
+CREATE TABLE Filmes (
+	id INT PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    sinopse TEXT NOT NULL,
+    dataLançamento DATE NOT NULL,
+    avaliaçao INT NOT NULL
+);
+
+-- letra b)
+INSERT INTO Filmes (id, titulo, sinopse, dataLançamento, avaliaçao)
+VALUES (001, "Se Eu Fosse Você", "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos", "2006/01/06", 7); 
+
+-- letra c)
+INSERT INTO Filmes (id, titulo, sinopse, dataLançamento, avaliaçao)
+VALUES (
+002, 
+"Doce de Mãe",
+"Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela",
+"2012/12/27",
+10); 
+
+-- letra d)
+INSERT INTO Filmes (id, titulo, sinopse, dataLançamento, avaliaçao)
+VALUES (003, "Dona Flor e Seus Dois Maridos", "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.", "2017/11/02", 8);
+
+-- letra d)
+INSERT INTO Filmes (id, titulo, sinopse, dataLançamento, avaliaçao)
+VALUES (004, "Carandiru", "Carandiru conta a história de detentos, chegando ao massacre de 1992, com 111 prisioneiros mortos.", "2003/04/11", 8);  
+
+
+-- Exercíocio 6
+
+-- letra a)
+SELECT id, titulo, avaliaçao FROM Filmes
+WHERE id = "003";
+
+
+-- letra b)
+SELECT * from Filmes 
+WHERE nome = "Carandiru";
+
+-- letra c)
+SELECT id, titulo, sinopse FROM Filmes
+WHERE avaliaçao < 7;
+
+-- Exercício 7
+
+-- letra a)
+
+SELECT * from Filmes
+WHERE titulo LIKE "vida";
+
+
+-- letra b)
+SELECT * from Filmes
+WHERE titulo LIKE "%flor%" OR sinopse LIKE "%flor%";
+
+-- letra c)
+
+SELECT * FROM Filmes
+WHERE dataLançamento < "2020-05-04";
+
+-- letra d)
+SELECT * from Filmes
+WHERE dataLançamento < "2020-05-04" AND
+(titulo LIKE "%animada%" OR sinopse LIKE "%animada%") AND
+avaliaçao >7;
+
+SELECT * from Filmes
+WHERE dataLançamento < CURDATE() AND
+(titulo LIKE "%animada%" OR sinopse LIKE "%animada%") AND
+avaliaçao >7;

@@ -1,0 +1,132 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.divPai{
+    background: whitesmoke;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+.menu{
+    font: none;
+}
+
+.buscar{
+    display: flex;
+    justify-content: space-between;
+    font-family: fantasy;
+    align-items: center;
+    height: 70px;
+    text-align: left;
+    background-color: orange;
+}
+
+#button{
+    margin-right: 50px;
+    width: 90px;
+    padding: 2px 5px 2px 5px;
+    height: 25px;
+    text-align: left;
+    font-size: 15px;
+    background-color: white;
+    border: none
+}
+
+
+/* estilizar os cards */
+
+.imgCard{
+    width: 300px;
+    height: 180px;
+}
+
+
+.card{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    font-size: 10px;
+    font-family: fantasy;
+      
+}
+
+.titulo{
+    background-color: white;
+    height: 50px;
+}
+
+
+.link{
+    color:black;
+    font-size: 15px;
+    font-family: fantasy;
+}
+
+/* Para qubrar a linha e alinhas os cards na mesma página */
+
+.videos{
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+    grid-template-rows: repeat(2,200px);
+    gap: 20px;
+    padding: 30px;
+    align-items: flex-start;
+        
+}
+
+/* fazer o footer */
+
+.fraseFinal{
+    background-color: rgb(70, 68, 68);
+    color: white;
+    padding: 20px;
+    font-size: 15px;
+
+}
+
+/* organizar cabeçalho da pagina 2 de video */
+
+.index{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    font-family: fantasy;
+    align-items: center;
+    height: 70px;
+    text-align: left;
+    background-color: orange;
+}
+
+#pagInicial{
+    margin-right: 90px;
+    padding: 2px 5px 2px 5px;
+    font-size: 20px;
+    color: white;
+    font-family: fantasy;    
+    text-decoration-line: none;
+}
+
+/* organizar pagina dos videos */
+
+.divVideo{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 30px;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+    padding-top: 90px;
+    justify-items: center;
+
+}
+
+.vid{
+    display: grid;   
+    align-items: center;
+    padding: 20px;
+    justify-items: center;
+   
+
+}
