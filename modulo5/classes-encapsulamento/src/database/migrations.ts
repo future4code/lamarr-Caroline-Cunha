@@ -1,23 +1,33 @@
 import connection from "./connection"
-import { products, users } from "./data"
+import { products, purchases, users } from "./data"
+import { TABLE_PRODUCTS, TABLE_PURCHASES, TABLE_USERS } from "./tableNames"
+
 const createTables = async () => {
     await connection.raw(`
-SET FOREIGN_KEY_CHECKS=0;
-DROP TABLE IF EXISTS Labe_Products, Labe_Users;
+DROP TABLE IF EXISTS ${TABLE_PURCHASES}, ${TABLE_PRODUCTS}, ${TABLE_USERS};
 
-CREATE TABLE IF NOT EXISTS Labe_Users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS ${TABLE_USERS}(
+    id VARCHAR(255) PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Labe_Products (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS ${TABLE_PRODUCTS}(
+    id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price DECIMAL(6,2) NOT NULL
-    );
-SET FOREIGN_KEY_CHECKS=1;
-`)
+);
+
+CREATE TABLE IF NOT EXISTS ${TABLE_PURCHASES}(
+    id VARCHAR(255) PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    product_id VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL,
+    total_price DECIMAL(6,2) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES ${TABLE_USERS}(id),
+    FOREIGN KEY (product_id) REFERENCES ${TABLE_PRODUCTS}(id)
+);
+    `)
     .then(() => {
         console.log(`Tables created successfully!`)
         insertData()
@@ -27,14 +37,19 @@ SET FOREIGN_KEY_CHECKS=1;
 
 const insertData = async () => {
     try {
-        await connection("Labe_Users")
+        await connection(TABLE_USERS)
             .insert(users)
-            .then(() => console.log(`"Labe_Users populated!`))
+            .then(() => console.log(`${TABLE_USERS} populated!`))
             .catch((error: any) => printError(error))
 
-        await connection("Labe_Products")
+        await connection(TABLE_PRODUCTS)
             .insert(products)
-            .then(() => console.log(`"Labe_Products populated!`))
+            .then(() => console.log(`${TABLE_PRODUCTS} populated!`))
+            .catch((error: any) => printError(error))
+
+        await connection(TABLE_PURCHASES)
+            .insert(purchases)
+            .then(() => console.log(`${TABLE_PURCHASES} populated!`))
             .catch((error: any) => printError(error))
 
     } catch (error: any) {
