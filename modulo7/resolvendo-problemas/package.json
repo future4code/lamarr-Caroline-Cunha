@@ -1,0 +1,20 @@
+{
+  "name": "resolvendo-problemas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "ts-node-dev ./src/index.ts",
+    "start": "node ./build/src/exercicio1/index.js",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.15.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.2"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
+}
