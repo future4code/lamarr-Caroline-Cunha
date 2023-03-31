@@ -63,7 +63,8 @@
   "scripts": {
     "start:dev": "ts-node-dev ./src/index.ts",
     "start": "node ./build/src/Exercicios/Exercicio1/index.js",
-    "start": "node ./build/src/Exercicios/Exercicio2/index.js",
+    "start2": "node ./build/src/Exercicios/Exercicio2/index.js",
+    "start3": "node ./build/src/Exercicios/Exercicio3/index.js",
     "build": "tsc"
 
   },
